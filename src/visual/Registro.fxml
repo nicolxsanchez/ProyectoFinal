@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.MainController">
+<AnchorPane prefHeight="295.0" prefWidth="479.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="visual.MainController">
     <children>
-        <Button text="Hola" layoutX="150.0" layoutY="100.0" onAction="#mostrarMensaje"/>
+        <Button layoutX="185.0" layoutY="80.0" onAction="#btnAgregarParada" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #64babf;" text="Agregar Parada" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="186.0" layoutY="113.0" mnemonicParsing="false" onAction="#btnAgregarRuta" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #64babf;" text="Agregar Ruta" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="186.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnModificarParada" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #64babf;" text="Modificar Parada" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="103.0" layoutY="31.0" prefHeight="36.0" prefWidth="285.0" text="Sistema de Gestión de Rutas" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="186.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnModificarRuta" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #64babf;" text="Modificar Ruta" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="185.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnEliminarParada" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #64babf;" text="Eliminar Parada" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="186.0" layoutY="246.0" mnemonicParsing="false" onAction="#btnEliminarRuta" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #64babf;" text="Eliminar Ruta" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

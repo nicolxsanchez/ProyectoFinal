@@ -6,12 +6,29 @@ public class Parada {
     private int id;
     private String nombre;
     private String ubicacion;
+    private double latitud;             // Coordenada de latitud
+    private double longitud;
 
-    public Parada(String nombre, String ubicacion) {
+    public Parada(String nombre, double latitud, double longitud) {
         this.nombre = nombre;
-        this.ubicacion = ubicacion;
         this.id = contadorId++;
+        this.latitud = latitud;
+        this.longitud = longitud;
 
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public double setLatitud(double latitud) {
+        return this.latitud = latitud;
+    }
+    public double setLongitud(double longitud) {
+        return this.longitud = longitud;
     }
 
     public String getNombre() {
