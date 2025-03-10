@@ -2,16 +2,12 @@ package logico;
 
 public class Parada {
 
-    private static int contadorId = 1;
-    private int id;
     private String nombre;
-    private String ubicacion;
     private double latitud;             // Coordenada de latitud
     private double longitud;
 
     public Parada(String nombre, double latitud, double longitud) {
         this.nombre = nombre;
-        this.id = contadorId++;
         this.latitud = latitud;
         this.longitud = longitud;
 
@@ -35,23 +31,13 @@ public class Parada {
         return nombre;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    @Override
+    public String toString() {
+        return nombre;  // Devuelve el nombre de la parada
     }
 }

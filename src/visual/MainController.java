@@ -22,7 +22,7 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AgregarParada.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Agregar Parada");
-            stage.setScene(new Scene(loader.load(), 450, 350));
+            stage.setScene(new Scene(loader.load(), 450, 290));
 
             AgregaParadas controller = loader.getController();
             controller.setGrafo(grafo);
@@ -36,7 +36,20 @@ public class MainController {
 
     @FXML
     private void btnAgregarRuta() {
-        mostrarAlerta("Ruta agregada", "Se agregó la ruta correctamente.");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AgregarRuta.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Agregar Ruta");
+            stage.setScene(new Scene(loader.load(), 450, 400));
+
+            AgregaRutas controller = loader.getController();
+            controller.setGrafo(grafo);
+
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo abrir la ventana de agregar ruta.");
+            e.printStackTrace();
+        }
     }
 
     @FXML

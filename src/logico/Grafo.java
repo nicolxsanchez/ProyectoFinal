@@ -3,12 +3,31 @@ package logico;
 import java.util.*;
 public class Grafo {
 
+    private static Grafo grafo = null;
     private Map<Parada, List<Ruta>> adyacencias; //conexiones
 
     public Grafo() {
         adyacencias = new HashMap<>();
     }
 
+    /*public static Grafo getInstance() {
+        if (grafo == null) {
+            grafo = new Grafo();
+        }
+        return grafo;
+    }*/
+
+    public List<Parada> getParadas() {
+        return new ArrayList<>(adyacencias.keySet());
+    }
+
+    public List<Ruta> getRutas() {
+        List<Ruta> rutas = new ArrayList<>();
+        for (List<Ruta> listaRutas : adyacencias.values()) {
+            rutas.addAll(listaRutas);
+        }
+        return rutas;
+    }
 
     public boolean agregarParada(Parada parada) {
         if (adyacencias.containsKey(parada)) {
@@ -44,13 +63,12 @@ public class Grafo {
 
 
 
-    public boolean modificarParada(Parada parada, String nuevoNombre, String nuevaUbicacion) {
+    public boolean modificarParada(Parada parada, String nuevoNombre) {
         if (!adyacencias.containsKey(parada)) {
             System.out.println("La parada no existe.");
             return false;
         }
         parada.setNombre(nuevoNombre);
-        parada.setUbicacion(nuevaUbicacion);
         System.out.println("Parada modificada: " + parada.getNombre());
         return true;
     }
@@ -109,7 +127,7 @@ public class Grafo {
         for (Map.Entry<Parada, List<Ruta>> entry : adyacencias.entrySet()) {
             Parada parada = entry.getKey();
             List<Ruta> rutas = entry.getValue();
-            System.out.println("Parada: " + parada.getNombre() + " (" + parada.getUbicacion() + ")");
+            System.out.println("Parada: " + parada.getNombre() + ")");
             for (Ruta ruta : rutas) {
                 System.out.println("  → " + ruta.getDestino().getNombre() +
                         " | Tiempo: " + ruta.getTiempo() + " min | Distancia: " + ruta.getDistancia() + " km | Costo: $" + ruta.getCosto() +

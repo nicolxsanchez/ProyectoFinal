@@ -16,9 +16,7 @@ public class AgregaParadas
     @FXML private TextField txtLatitud;
     @FXML private TextField txtLongitud;
     @FXML private Button btnGuardar;
-    @FXML private TextField txtId;
 
-    //String id = txtId.setText(Parada.class.getId().toString());
     @FXML
     private void guardarParada() {
 
@@ -32,9 +30,8 @@ public class AgregaParadas
             Parada nuevaParada = new Parada(txtNombre.getText(), latitud, longitud);
             grafo.agregarParada(nuevaParada);
 
-            txtId.setText(String.valueOf(nuevaParada.getId()));
-            mostrarAlerta("Parada agregada", "Se agregó la parada: " + txtNombre.getText());
-            cerrarVentana();
+            mostrarAlerta("Parada Agregada", "Se agregó la parada: " + txtNombre.getText());
+            limpiarCampos();
         }
     }
 
@@ -54,5 +51,11 @@ public class AgregaParadas
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
+    }
+
+    private void limpiarCampos() {
+        txtNombre.setText("");
+        txtLatitud.setText("");
+        txtLongitud.setText("");
     }
 }
